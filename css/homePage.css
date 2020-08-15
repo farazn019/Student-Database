@@ -1,9 +1,4 @@
 
-#homePageTitle{
-    text-align: center;
-    color: yellowgreen;
-}
-
 *{
     margin: 0;
     padding: 0;
@@ -15,6 +10,10 @@
     width: 100%;
     height: 100vh;
 }
+
+/*This z-index is important because it will allow the buttons and the input fields to be pushed to the top of the UI stack.s*/
+svg{z-index: 9999;}
+
 
 .animation{
     position: absolute;
@@ -40,7 +39,7 @@
     left: 86%;
     width: 80px;
     height: 80px;
-    animation-delay: 0s;
+    animation-delay: -0s;
 }
 
 .animation li:nth-child(2){
@@ -67,4 +66,46 @@
         transform: translateY(-800px) rotate(360deg);
         opacity: 0;
     }
+}
+
+#loginTitle{
+    position: absolute;
+    color: #dddddd;
+    font-weight: bold;
+}
+
+
+
+#username{
+    position: absolute;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 30%;
+    margin-left: 20%;
+    color: #dddddd;
+}
+
+#usernameInput{border-radius: 10px;}
+
+#password{
+    position: absolute;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 55%;
+    margin-left: 20%;
+    color: #dddddd;
+}
+
+#passwordInput{border-radius: 10px;}
+
+#loginButton{
+    position: relative;
+    margin-left: 45%;
+    margin-top: 65%;
+    height: 40px;
+    width: 70px;
+}
+
+#loginButton:hover{
+    background-color: red;
 }

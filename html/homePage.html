@@ -9,7 +9,20 @@
 
 <body>
     <div class="homePage-background"> <!-- animation area-->
-        <h2 id="homePageTitle">Login Or Sign Up</h2>
+        <svg class="container-sm" width="400" height="760" style="position:absolute; margin-left: 35%; margin-top:35px">
+            <rect id="loginRect" width="50%" height="100%" rx="40px" ry="40px" style="fill: cornflowerblue; stroke: pink; stroke-opacity: 0.0; stroke-width: 3px; "/>
+            <foreignObject height="760" width="50%">
+
+                <label id="username" for="usernameInput">UserName:
+                    <input type="text" id="usernameInput" name="usernameInput" placeholder=" Enter your username ">
+                </label>
+                <label id="password" for="passwordInput">Password:
+                    <input type="text" id="passwordInput" name="passwordInput" placeholder=" Enter your password">
+                </label>
+                <button type="submit" id='loginButton' value="Login" onclick="window.location.href='courses.html';">Login</button>
+            </foreignObject>
+        </svg>
+
         <ul class="animation"> <!-- box area-->
             <li></li>
             <li></li>
@@ -19,5 +32,6 @@
             <li></li>
         </ul>
     </div>
+
 </body>
 </html>

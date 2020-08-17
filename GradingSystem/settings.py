@@ -30,7 +30,11 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+'''TEMPLATE_DIRS = (os.path.join(BASE_DIR, '/templates'), os.path.join(BASE_DIR, 'music', 'templates', 'music'))
+'''
+
 INSTALLED_APPS = [
+    'homePage.apps.HomepageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +58,7 @@ ROOT_URLCONF = 'GradingSystem.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, '/templates'), os.path.join(BASE_DIR, 'homePage', 'templates', 'homePage')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

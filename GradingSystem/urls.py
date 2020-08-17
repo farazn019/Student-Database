@@ -14,8 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 urlpatterns = [
+    path('', include('homePage.urls')),
+    path('login/', include('homePage.urls')),
     path('admin/', admin.site.urls),
+
+    #This will take the user to the home screen page, which will prompt the user to sign up/ sign in (below).
+    #path('../homePage/', addsite),
+
 ]

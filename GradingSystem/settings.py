@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 '''
 
 INSTALLED_APPS = [
+    'signUpPage.apps.SignuppageConfig',
     'homePage.apps.HomepageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -84,7 +85,8 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': 'Tesla123',
+        #This asks me for my password on runtime, because I do not feel comfortable writing my password here.
+        'PASSWORD': input("Password:"),
     }
 }
 

@@ -74,8 +74,6 @@ svg{z-index: 9999;}
     font-weight: bold;
 }
 
-
-
 #username{
     position: absolute;
     font-size: large;
@@ -85,7 +83,7 @@ svg{z-index: 9999;}
     color: #dddddd;
 }
 
-#usernameInput{border-radius: 10px;}
+#usernameInput{text-indent: 4%;}
 
 #password{
     position: absolute;
@@ -96,16 +94,26 @@ svg{z-index: 9999;}
     color: #dddddd;
 }
 
-#passwordInput{border-radius: 10px;}
+#passwordInput{text-indent: 4%;}
 
 #loginButton{
-    position: relative;
+    position: absolute;
     margin-left: 45%;
     margin-top: 65%;
     height: 40px;
     width: 70px;
+    border-radius: 15%;
+    font-weight: bold;
 }
 
-#loginButton:hover{
-    background-color: red;
+
+#signUpButton{
+    display: block;
+    position: absolute;
+    margin-left: 42%;
+    margin-top: 85%;
+    height: 45px;
+    width: 100px;
+    border-radius: 15%;
+    font-weight: bold;
 }

@@ -17,13 +17,17 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', include('homePage.urls')),
     path('login/', include('homePage.urls')),
     path('admin/', admin.site.urls),
 
+
+    path('signup/', include('signUpPage.urls')),
+    path('signUpPage/signUpPage/signUpPage.html', include('signUpPage.urls')),
+
     #This will take the user to the home screen page, which will prompt the user to sign up/ sign in (below).
-    #path('../homePage/', addsite),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,0 +1,9 @@
+
+#loginScreen{
+    position: absolute;
+    display: block;
+    width: 600px;
+    height: 750px;
+    margin-left: 30%;
+    margin-top: 20%;
+}

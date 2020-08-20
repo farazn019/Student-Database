@@ -5,5 +5,3 @@ from django.template import loader
 
 def index(request):
     return render(request, 'homePage/homePage.html')
-
-# Create your views here.

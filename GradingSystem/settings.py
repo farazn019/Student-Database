@@ -59,7 +59,8 @@ ROOT_URLCONF = 'GradingSystem.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '/templates'), os.path.join(BASE_DIR, 'homePage', 'templates', 'homePage')],
+        'DIRS': [os.path.join(BASE_DIR, '/templates'), os.path.join(BASE_DIR, 'homePage', 'templates', 'homePage'),
+                 os.path.join(BASE_DIR, 'signUpPage', 'templates', 'signUpPage')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

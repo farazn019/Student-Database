@@ -8,9 +8,22 @@
     <link rel="stylesheet" href="{% static 'signUpPage/signUpPage.css' %}" type="text/css"/>
 </head>
 <body>
-    <div class="loginScreen">
-        <div class="container-sm" style="background: aquamarine">
+    <div id="backGround">
+        <div class="container-sm">
             <h2>Sign Up</h2>
+        </div>
+
+        <div id="inputs">
+            <img src="../../static/signUpPage/SignUp-Person.png" alt="Signup Person Image" id="image">
+            <p id="inputText">Please enter your Email Address,<br/> Username, and Password.</p>
+            <div class="padding-input">
+                <input type="text" id="email" placeholder="Email"/>
+                <input type="text" id="userID" placeholder="User ID"/>
+                <input type="password" id="password" placeholder="Password"/>
+                <input type="password" id="passwordVerification" placeholder="Verify Your password"/>
+                <button type="submit" id="signup-button" value="user-credentials">Sign Up</button>
+            </div>
+
         </div>
     </div>
 </body>

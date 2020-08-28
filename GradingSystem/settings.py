@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'signUpPage.apps.SignuppageConfig',
     'homePage.apps.HomepageConfig',
+    'grades.apps.GradesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,7 +61,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, '/templates'), os.path.join(BASE_DIR, 'homePage', 'templates', 'homePage'),
-                 os.path.join(BASE_DIR, 'signUpPage', 'templates', 'signUpPage')],
+                 os.path.join(BASE_DIR, 'signUpPage', 'templates', 'signUpPage'),
+                 os.path.join(BASE_DIR, 'grades', 'templates', 'grades')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

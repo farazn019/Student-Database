@@ -30,9 +30,6 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-'''TEMPLATE_DIRS = (os.path.join(BASE_DIR, '/templates'), os.path.join(BASE_DIR, 'music', 'templates', 'music'))
-'''
-
 INSTALLED_APPS = [
     'signUpPage.apps.SignuppageConfig',
     'homePage.apps.HomepageConfig',

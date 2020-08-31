@@ -1,0 +1,29 @@
+
+#courses_bg{
+    display: block;
+    position: absolute;
+    width: 100%;
+    margin-top: 7%;
+}
+
+#course_header{
+    text-align: center;
+}
+
+#courses-table, tr{
+    dislay: block;
+    position: relative;
+    border: 1px solid black;
+    padding-right: 10%;
+    align-content: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4%;
+}
+
+th{
+    dislay: block;
+    position: relative;
+    border: 1px solid black;
+}

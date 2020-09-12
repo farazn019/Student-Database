@@ -28,6 +28,7 @@ urlpatterns = [
     path('signup/', include('signUpPage.urls')),
     path('signUpPage/signUpPage/signUpPage.html', include('signUpPage.urls')),
     path('grades/grades/courses.html', include('grades.urls')),
+    path('newcourse/newcourse/addCourse.html', include('newcourse.urls')),
 
     #This will take the user to the home screen page, which will prompt the user to sign up/ sign in (below).
 

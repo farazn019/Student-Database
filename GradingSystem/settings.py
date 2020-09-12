@@ -34,12 +34,14 @@ INSTALLED_APPS = [
     'signUpPage.apps.SignuppageConfig',
     'homePage.apps.HomepageConfig',
     'grades.apps.GradesConfig',
+    'newcourse.apps.NewcourseConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [

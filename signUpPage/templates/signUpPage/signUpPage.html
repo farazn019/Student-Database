@@ -1,17 +1,41 @@
 <!DOCTYPE html>
-{% load static%}
 <html lang="en">
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'signUpPage/signUpPage.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="../../static/signUpPage/signUpPage.css" type="text/css"/>
+    {% load bootstrap4 %}
+    <title>{% block title %}SignUp{% endblock %} </title>
 </head>
 <body>
     <div id="backGround">
         <div class="container-sm">
             <h2>Sign Up</h2>
         </div>
+
+        <div id="inputs">
+            <img src="../../static/signUpPage/SignUp-Person.png" alt="Signup Person Image" id="image">
+            <p id="inputText">Please enter your Email Address,<br/> Username, and Password.</p>
+            <div class="padding-input">
+                <form method="post">
+                    {% csrf_token %}
+                    {{form}}
+                    <input type="text" id="email" placeholder="Email"/>
+                    <input type="text" id="userID" placeholder="User ID"/>
+                    <input type="password" id="password" placeholder="Password"/>
+                    <input type="password" id="passwordVerification" placeholder="Verify Your password"/>
+                    <button type="submit" class="btn btn-success" id="signup-button" value="user-credentials">Sign Up</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<!--
+</head>
+<body>
 
         <div id="inputs">
             <img src="../../static/signUpPage/SignUp-Person.png" alt="Signup Person Image" id="image">
@@ -28,3 +52,4 @@
     </div>
 </body>
 </html>
+-->

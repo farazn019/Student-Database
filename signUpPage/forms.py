@@ -6,6 +6,9 @@ from django.contrib.auth.models import User
 
 class RegisterForm(UserCreationForm):
     email = forms.EmailField()
+    username = forms.CharField(min_length=7, max_length=50)
+    password1 = forms.CharField(min_length=8, max_length=80, help_text="<br/> Please enter a unique password that is "
+                                                                       "from ""8 to 80 characters long")
 
     class Meta:
         model = User

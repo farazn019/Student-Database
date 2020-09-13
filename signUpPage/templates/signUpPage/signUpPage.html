@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+{% load crispy_forms_tags %}
 
 <head>
     <meta charset="UTF-8">
@@ -20,12 +21,7 @@
             <div class="padding-input">
                 <form method="post">
                     {% csrf_token %}
-                    {{form}}
-                    <!--
-                    <input type="text" id="email" placeholder="Email"/>
-                    <input type="text" id="userID" placeholder="User ID"/>
-                    <input type="password" id="password" placeholder="Password"/>
-                    <input type="password" id="passwordVerification" placeholder="Verify Your password"/>-->
+                    {{ form|crispy }}
                     <button type="submit" class="btn btn-success" id="signup-button" value="user-credentials">Sign Up</button>
                 </form>
             </div>

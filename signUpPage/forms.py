@@ -1,17 +1,23 @@
 from django import forms
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+# from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm, User
+from . models import RegisterUser
 
 
 class RegisterForm(UserCreationForm):
-    email = forms.EmailField()
-    username = forms.CharField(min_length=7, max_length=50)
-    password1 = forms.CharField(min_length=8, max_length=80, help_text="<br/> Please enter a unique password that is "
-                                                                       "from ""8 to 80 characters long")
 
     class Meta:
         model = User
-        fields = ["email", "username", "password1", "password2"]
+        fields = ["username", "email", "password"]
 
-
+    def __init__(self, *args, **kwargs):
+        super(UserCreationForm, self).__init__(*args, **kwargs)
+        self.fields.pop('password2')
+        self.fields.pop('password1')
+    widgets = {
+        forms.EmailInput(attrs={'class': 'form-control'}),
+        forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'UserName'}),
+                        min_length=8, max_length=60),
+        forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),
+                        min_length=8, max_length=80),
+    }

@@ -19,16 +19,20 @@
             <img src="../../static/signUpPage/SignUp-Person.png" alt="Signup Person Image" id="image">
             <p id="inputText">Please enter your Email Address,<br/> Username, and Password.</p>
             <div class="form-group">
+                {% block content %}
                 <form method="post">
                     {% csrf_token %}
+                    {{ forms|crispy}}
                     {% for field in form %}
                         <div class="fields">
-                            <label for="{{ field.id_for_label }}" class="label" style="margin-bottom: 5%">{{field.html_name}}</label>
+
+                            <label for="{{ field.id_for_label }}" class="label">{{field.html_name}}</label>
                             {{field}}
                         </div>
                     {% endfor %}
-                    <button type="submit" class="btn btn-success" id="signup-button" value="user-credentials">Sign Up</button>
+                   <button type="submit" class="btn btn-success" id="signup-button" value="user-credentials">Sign Up</button>
                 </form>
+                {% endblock %}
             </div>
 
         </div>

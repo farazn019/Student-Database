@@ -1,23 +1,40 @@
 from django import forms
 # from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm, User
+from django.contrib.auth.models import models
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Fieldset, Layout, ButtonHolder, Submit
 from . models import RegisterUser
 
 
-class RegisterForm(UserCreationForm):
-
-    class Meta:
-        model = User
-        fields = ["username", "email", "password"]
+class RegisterForm(forms.Form):
+    Username = forms.CharField(
+        label="UserName",
+        required=True
+    )
+    Email = forms.EmailField(
+        label="Email",
+        required=True
+    )
+    Password = forms.CharField(
+        label="Password",
+        required=True
+    )
 
     def __init__(self, *args, **kwargs):
-        super(UserCreationForm, self).__init__(*args, **kwargs)
-        self.fields.pop('password2')
-        self.fields.pop('password1')
-    widgets = {
-        forms.EmailInput(attrs={'class': 'form-control'}),
-        forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'UserName'}),
-                        min_length=8, max_length=60),
-        forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),
-                        min_length=8, max_length=80),
-    }
+        super().__init__(*args, **kwargs)
+        print("Made IT!")
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-exampleForm'
+        self.helper.form_class = 'blueForms'
+        self.helper.form_method = 'post'
+        self.helper.form_action = 'submit_survey'
+
+        self.helper.layout = Layout(
+            Fieldset(
+                'Registration Information',
+                'Username',
+                'Email',
+                'Password'
+            ),
+        )

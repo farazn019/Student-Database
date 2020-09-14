@@ -72,10 +72,18 @@ h2{
 
 #signup-button{
     display: block;
+    position: relative;
     margin-left:45%;
+    margin-top: 5%;
     margin-bottom: 3%;
     min-width: 100px;
     min-height: 30px;
     border-radius: 10px;
+}
 
+.label{
+    display: inline-block;
+    position: relative;
+    margin-left: 25%;
+    margin-bottom: 5%;
 }

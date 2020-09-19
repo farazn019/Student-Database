@@ -85,16 +85,22 @@ svg{z-index: 9999;}
 
 #usernameInput{text-indent: 4%;}
 
-#password{
-    position: absolute;
-    font-size: large;
-    font-weight: bold;
-    margin-top: 55%;
-    margin-left: 20%;
-    color: #dddddd;
+#passwordInput{text-indent: 4%;}
+
+
+.label{
+    position: relative;
+    display: inline-block;
+    margin-left: 10%;
+    margin-top: 10%;
 }
 
-#passwordInput{text-indent: 4%;}
+.input{
+    position: relative;
+    display: inline-block;
+    margin-left: 10%;
+
+}
 
 #loginButton{
     position: absolute;

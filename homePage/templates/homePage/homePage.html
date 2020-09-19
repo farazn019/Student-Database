@@ -1,29 +1,35 @@
-<!DOCTYPE html>
 {% load static%}
+{% load crispy_forms_tags %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'homePage/homePage.css'%}" type="text/css">
+    <title>{% block title %}Home{% endblock %}</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'homePage/favicon.png' %}">
+    {% load bootstrap4 %}
     <link href="../../static/homePage/homePage.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
     <div class="homePage-background"> <!-- animation area-->
-        <svg class="container-sm" width="400" height="760" style="position:absolute; margin-left: 35%; margin-top:35px">
-            <rect id="loginRect" width="50%" height="100%" rx="40px" ry="40px" style="fill: cornflowerblue; stroke: pink; stroke-opacity: 0.0; stroke-width: 3px; "/>
-            <foreignObject height="760" width="50%">
-
-                <label id="username" for="usernameInput">UserName:
-                    <input type="text" id="usernameInput" name="usernameInput" placeholder=" Enter your username ">
-                </label>
-                <label id="password" for="passwordInput">Password:
-                    <input type="password" id="passwordInput" name="passwordInput" placeholder=" Enter your password">
-                </label>
-                <button type="submit" id='loginButton' value="Login" onclick="window.location.href='../../../grades/grades/courses.html';">Login</button>
-                <button type="submit" id="signUpButton" value="Sign Up" onclick="window.location.href='../../../signUpPage/signUpPage/signUpPage.html'">Sign Up</button>
+        <svg class="container-sm" width="25%" height="760" style="position:absolute; margin-left: 35%; margin-top:35px">
+            <rect id="loginRect" width="100%" height="100%" rx="40px" ry="40px" style="fill: cornflowerblue; stroke: pink; stroke-opacity: 0.0; stroke-width: 3px; "/>
+            <foreignObject height="760" width="100%">
+                <div class="loginpage-form">
+                    {% block content %}
+                    <form method="post">
+                        {% csrf_token %}
+                        {{forms|crispy}}
+                        {% for field in form %}
+                            <div class="fields">
+                                <label for="{{field.id_for_label}}" class="label">{{field.html_name}}</label>
+                                <div id="input">{{field}}</div>
+                            </div>
+                        {% endfor %}
+                        <button type="submit" class="btn btn-success" id="loginButton" formmethod="post">Login</button>
+                        <input type="button" class="btn btn-success" id="signUpButton" formmethod="post" value="Sign Up">
+                    </form>
+                    {% endblock %}
+                </div>
             </foreignObject>
         </svg>
 

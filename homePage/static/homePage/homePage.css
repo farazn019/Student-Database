@@ -91,16 +91,19 @@ svg{z-index: 9999;}
 .label{
     position: relative;
     display: inline-block;
-    margin-left: 10%;
-    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
 }
 
-.input{
+#input{
     position: relative;
-    display: inline-block;
+    display: inline;
     margin-left: 10%;
 
 }
+
+
 
 #loginButton{
     position: absolute;

@@ -25,7 +25,6 @@
                     {{ forms|crispy}}
                     {% for field in form %}
                         <div class="fields">
-
                             <label for="{{ field.id_for_label }}" class="label">{{field.html_name}}</label>
                             {{field}}
                         </div>

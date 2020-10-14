@@ -21,16 +21,11 @@ from django.views.generic import TemplateView
 
 
 urlpatterns = [
+    # This will take the user to the home screen page, which will prompt the user to sign up/ sign in (below).
     path('', include('homePage.urls')),
     path('login/', include('homePage.urls')),
     path('admin/', admin.site.urls),
-
-
-    path('signup/', include('signUpPage.urls')),
-    path('signUpPage/signUpPage/signUpPage.html', include('signUpPage.urls')),
-    path('grades/grades/courses.html', include('grades.urls')),
-    path('newcourse/newcourse/addCourse.html', include('newcourse.urls')),
-
-    #This will take the user to the home screen page, which will prompt the user to sign up/ sign in (below).
-
+    path('signup/', include('signUpPage.urls'), name='signup'),
+    path('grades/', include('grades.urls')),
+    path('newcourse/', include('newcourse.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

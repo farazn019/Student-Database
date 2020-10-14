@@ -16,17 +16,16 @@
             <foreignObject height="760" width="100%">
                 <div class="loginpage-form">
                     {% block content %}
-                    <form method="post">
+                    <form action="homePage/forms.py" method="post">
                         {% csrf_token %}
                         {{forms|crispy}}
                         {% for field in form %}
                             <div class="fields">
-                                <label for="{{field.id_for_label}}" class="label">{{field.html_name}}</label>
-                                <div id="input">{{field}}</div>
+                                <div class="label">{{field}}</div>
                             </div>
                         {% endfor %}
-                        <button type="submit" class="btn btn-success" id="loginButton" formmethod="post">Login</button>
-                        <input type="button" class="btn btn-success" id="signUpButton" formmethod="post" value="Sign Up">
+                        <button type="submit" name="login" class="btn btn-success" id="loginButton" formmethod="post">Login</button>
+                        <button type="submit" name="signup" class="btn btn-success" id="signUpButton" formmethod="post">Sign Up</button>
                     </form>
                     {% endblock %}
                 </div>

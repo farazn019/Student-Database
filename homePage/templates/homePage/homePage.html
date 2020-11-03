@@ -25,7 +25,9 @@
                             </div>
                         {% endfor %}
                         <button type="submit" name="login" class="btn btn-success" id="loginButton" formmethod="post">Login</button>
-                        <button type="submit" name="signup" class="btn btn-success" id="signUpButton" formmethod="post">Sign Up</button>
+                    </form>
+                    <form action="signup" method="get">
+                        <button type="submit" name="signup" class="btn btn-success" id="signUpButton" formmethod="get">Sign Up</button>
                     </form>
                     {% endblock %}
                 </div>

@@ -9,13 +9,13 @@ class loginForm(forms.Form):
         label="Username",
         help_text="Please enter your username",
         widget=forms.TextInput(attrs={"placeholder":"Username"}),
-        required=True
+        required=False
     )
 
     Password = forms.CharField(
         label="Password",
         help_text="Enter your password",
         widget=forms.TextInput(attrs={"placeholder":"Password"}),
-        required=True
+        required=False
     )
 

@@ -19,13 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
+app_name='signup'
 
 urlpatterns = [
     # This will take the user to the home screen page, which will prompt the user to sign up/ sign in (below).
     path('', include('homePage.urls')),
-    path('login/', include('homePage.urls')),
+    path('login/', include('homePage.urls'), name='login'),
     path('admin/', admin.site.urls),
-    path('signup/', include('signUpPage.urls'), name='signup'),
+    path('signup/', include('signUpPage.urls'), name=app_name),
     path('grades/', include('grades.urls')),
     path('newcourse/', include('newcourse.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
